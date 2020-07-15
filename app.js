@@ -10,6 +10,113 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+function init() {
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "What is your role?",
+                name: "teamGenerator",
+                choices: ["Manager", "Engineer", "Intern", "Done"]
+            },
+        ]).then(teamMember => {
+            switch (teamMember.teamGenerator) {
+                case "Engineer":
+                    engineer();
+                    break;
+                case "Manager":
+                    manager();
+                    break;
+                case "Intern":
+                    intern();
+                    break;
+                case "Done":
+                    createTeam();
+                    break;
+            }
+
+        },
+    
+}
+
+
+
+function engineer() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is your ID:?",
+                name: "id"
+
+            },
+            {
+                type: "input",
+                message: "What is your email?",
+                name: "email"
+            },
+            {
+                type: "input",
+                message: "What is your Github?",
+                name: "github"
+            },
+        ]).then(function (data) {
+
+
+
+        }
+    }
+
+
+
+function manager() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is your ID:?",
+                name: "id"
+
+            },
+            {
+                type: "input",
+                message: "What is your email?",
+                name: "email"
+            },
+            {
+                type: "input",
+                message: "What is your Office number?",
+                name: "office"
+            },
+        ]).then(function (data) {
+
+        }
+        }
+
+
+
+function intern() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is your ID:?",
+                name: "id"
+
+            },
+            {
+                type: "input",
+                message: "What is your email?",
+                name: "email"
+            },
+            {
+                type: "input",
+                message: "What is your school?",
+                name: "school"
+            },
+        ]).then(function (data) {
+
+
 
 
 // Write code to use inquirer to gather information about the development team members,
