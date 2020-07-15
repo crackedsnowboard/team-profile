@@ -100,12 +100,14 @@ function manager() {
             {
                 type: "input",
                 message: "What is your Office number?",
-                name: "office"
+                name: "officeNumber"
             },
         ]).then(function (data) {
             console.log(data);
-            var newManager = new Manager(data.name, data.id, data.email, data.office);
+            console.log(data.officeNumber);
+            var newManager = new Manager(data.name, data.id, data.email, data.officeNumber);
             createTeam.push(newManager);
+            console.log(createTeam); // array not pushing data.officeNumber
             init();
         })
 }
@@ -150,7 +152,7 @@ function intern() {
      if(!fs.existsSync(OUTPUT_DIR)){
          fs.mkdirSync(OUTPUT_DIR)
      }
-     fs.writeFileSync(outputPath, render(createTeam), "utf-8")
+     fs.writeFileSync(outputPath, render(createTeam), "utf-8");
      }
 
 // Entry point
