@@ -67,11 +67,11 @@ function engineer() {
                 name: "github"
             }
         ]).then(function (data) {
-            console.log(data);
-            console.log(data.github);
+            // console.log(data);
+            // console.log(data.github);
             var newEngineer = new Engineer(data.name, data.id, data.email, data.github);
-            createTeam.push(newEngineer); //Github is not being pushed to the array - why?
-            console.log(createTeam);
+            createTeam.push(newEngineer); 
+            // console.log(createTeam);
             init();
 
         })
@@ -103,11 +103,11 @@ function manager() {
                 name: "officeNumber"
             },
         ]).then(function (data) {
-            console.log(data);
-            console.log(data.officeNumber);
+            // console.log(data);
+            // console.log(data.officeNumber);
             var newManager = new Manager(data.name, data.id, data.email, data.officeNumber);
             createTeam.push(newManager);
-            console.log(createTeam); // array not pushing data.officeNumber
+            // console.log(createTeam); 
             init();
         })
 }
@@ -141,7 +141,7 @@ function intern() {
                 name: "school"
             },
         ]).then(function (data) {
-            console.log(data);
+            // console.log(data);
             var newIntern = new Intern(data.name, data.id, data.email, data.school);
             createTeam.push(newIntern);
             init();
